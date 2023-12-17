@@ -57,6 +57,15 @@ class _MyHomePageState extends State<MyHomePage> {
               onPressed: () {},
               child: Text('TextButton'),
             ),
+            TextField(
+              decoration: InputDecoration(
+                labelText: '글자',
+                border: OutlineInputBorder(),
+              ),
+              onChanged: (text) {
+                print(text);
+              },
+            )
           ],
         ),
       ),
