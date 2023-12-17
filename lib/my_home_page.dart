@@ -34,6 +34,8 @@ class _MyHomePageState extends State<MyHomePage> {
               width: 100,
               height: 100,
             ),
+            SizedBox(height: 30,),
+            Container(height: 30,),
             Text(
               '숫자',
               style: TextStyle(
