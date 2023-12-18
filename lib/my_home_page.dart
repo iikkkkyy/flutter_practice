@@ -12,6 +12,15 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int count = 0;
+  String _text = '';
+  final _textController = TextEditingController();
+
+  // 메모리 문제
+  @override
+  void dispose() {
+    _textController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -73,16 +82,25 @@ class _MyHomePageState extends State<MyHomePage> {
                 children: [
                   Expanded(
                     child: TextField(
+                      controller: _textController,
                       decoration: InputDecoration(
                         labelText: '글자',
                         border: OutlineInputBorder(),
                       ),
                       onChanged: (text) {
-                        print(text);
+                        _text = text;
+                      },
+                      onTap: () {
+                        // print(_text);
                       },
                     ),
                   ),
-                  Expanded(child: ElevatedButton(onPressed: () {}, child: Text('login'))),
+                  Expanded(
+                      child: ElevatedButton(
+                          onPressed: () {
+                            print(_textController.text);
+                          },
+                          child: Text('login'))),
                 ],
               ),
               // Image.network(
