@@ -35,8 +35,12 @@ class _MyHomePageState extends State<MyHomePage> {
                 width: 100,
                 height: 100,
               ),
-              SizedBox(height: 300,),
-              Container(height: 30,),
+              SizedBox(
+                height: 300,
+              ),
+              Container(
+                height: 30,
+              ),
               Text(
                 '숫자',
                 style: TextStyle(
@@ -65,14 +69,21 @@ class _MyHomePageState extends State<MyHomePage> {
                 onPressed: () {},
                 child: Text('TextButton'),
               ),
-              TextField(
-                decoration: InputDecoration(
-                  labelText: '글자',
-                  border: OutlineInputBorder(),
-                ),
-                onChanged: (text) {
-                  print(text);
-                },
+              Row(
+                children: [
+                  Expanded(
+                    child: TextField(
+                      decoration: InputDecoration(
+                        labelText: '글자',
+                        border: OutlineInputBorder(),
+                      ),
+                      onChanged: (text) {
+                        print(text);
+                      },
+                    ),
+                  ),
+                  Expanded(child: ElevatedButton(onPressed: () {}, child: Text('login'))),
+                ],
               ),
               // Image.network(
               //   'https://previews.123rf.com/images/forplayday/forplayday1302/forplayday130200003/18145847-%EC%8A%A4%ED%83%80%EC%9D%98-%ED%8F%AD%EB%B0%9C%EA%B3%BC-%ED%95%A8%EA%BB%98-%EB%A9%8B%EC%A7%84-%EC%9A%B0%EC%A3%BC-%EB%B0%B0%EA%B2%BD.jpg',
@@ -85,10 +96,12 @@ class _MyHomePageState extends State<MyHomePage> {
                 height: 120,
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: Image.asset('assets/img.jpeg',
+                  child: Image.asset(
+                    'assets/img.jpeg',
                     width: 100,
                     height: 100,
-                    fit: BoxFit.cover,),
+                    fit: BoxFit.cover,
+                  ),
                 ),
               ),
             ],
